@@ -1,7 +1,5 @@
 package Queue;
 
-import Prism.Prism;
-
 public class Queue {
     private int[] data;
     private int front;
@@ -35,14 +33,18 @@ public class Queue {
         return value;
     }
 
-    public int get(int index) {
+    public String get(int value) {
         if (isEmpty()) {
             throw new RuntimeException("Queue is empty");
         }
-        if (index >= 0 && index <= rear) {
-            return data[index];
-        } else
-            throw new RuntimeException("Index out of bounds");
+        for (int i = 0; i < rear; i++) {
+            if (data[i] == value) {
+                String result = "Наше число знайдено і під індексом: " + i;
+                return result;
+            }
+        }
+        String res = "Наше число не знайдено: " + value;
+        return res;
     }
 
     // Перевірка на порожнечу черги
@@ -72,6 +74,8 @@ public class Queue {
     }
 
     public boolean equals(Queue src) {
+        if (src == null)
+            return false;
         if (isEmpty() && src.isEmpty()) {
             return true;
         }

@@ -47,6 +47,8 @@ public class Angle {
     }
 
     public boolean equals(Object obj) {
+        if (obj == null)
+            return false;
         boolean b = false;
         if ( obj instanceof Angle )
         {
