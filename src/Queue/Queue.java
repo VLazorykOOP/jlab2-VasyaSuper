@@ -33,18 +33,16 @@ public class Queue {
         return value;
     }
 
-    public String get(int value) {
+    public int get(int value) {
         if (isEmpty()) {
             throw new RuntimeException("Queue is empty");
         }
-        for (int i = 0; i < rear; i++) {
+        for (int i = 0; i <= rear; i++) {
             if (data[i] == value) {
-                String result = "Наше число знайдено і під індексом: " + i;
-                return result;
+                return i;
             }
         }
-        String res = "Наше число не знайдено: " + value;
-        return res;
+        return -1;
     }
 
     // Перевірка на порожнечу черги

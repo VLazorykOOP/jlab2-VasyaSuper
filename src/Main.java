@@ -109,7 +109,8 @@ public class Main {
                 while (!queue.isEmpty()) {
                     System.out.println(queue.dequeue());
                 }
-                System.out.println(queue1.get(20));
+                //System.out.println(queue1.get(20));
+                System.out.print("Значення під індексом: ");
                 System.out.println(queue1.get(10));
 
                 break;
